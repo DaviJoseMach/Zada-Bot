@@ -1,10 +1,9 @@
-const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
-const supabase = require("../db-connect");
+const { SlashCommandBuilder, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js");
 
 module.exports = {
-    data:new SlashCommandBuilder()
-    .setName("ajuda")
-    .setDescription("Ajuda com as funções do bot"),
+    data: new SlashCommandBuilder()
+        .setName("ajuda")
+        .setDescription("Ajuda com as funções do bot"),
 
     async execute(interaction) {
         const helpEmbed = new EmbedBuilder()
@@ -26,6 +25,24 @@ module.exports = {
             .setTimestamp()
             .setFooter({ text: "Cassino do Zada", iconURL: interaction.client.user.displayAvatarURL() });
 
-            await interaction.reply({ embeds: [helpEmbed] });
-        }
-}
+        const row = new ActionRowBuilder().addComponents(
+            new ButtonBuilder()
+                .setLabel("🌐 Acesse o Site")
+                .setStyle(ButtonStyle.Link)  // Estilo mais destacado
+                .setURL("https://zadabot.netlify.app/"),
+            new ButtonBuilder()
+                .setLabel("🤖 Convide o Bot")
+                .setStyle(ButtonStyle.Link)  // Estilo suave
+                .setURL("https://discord.com/oauth2/authorize?client_id=1318688407605477507&permissions=8&integration_type=0&scope=bot"),
+            new ButtonBuilder()
+                .setLabel("🐱 Repositório no GitHub")
+                .setStyle(ButtonStyle.Link)  // Estilo de perigo, vermelho
+                .setURL("https://github.com/DaviJoseMach/Zada-Bot")
+        );
+
+        await interaction.reply({
+            embeds: [helpEmbed],
+            components: [row]
+        });
+    }
+};

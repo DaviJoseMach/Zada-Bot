@@ -13,8 +13,12 @@ module.exports = {
                 "Aqui estão todos os comandos disponíveis para você se divertir e no cassino:\n\n" +
                 "📚 **Comandos Gerais:**\n \n" +
                 "🔹  </ajuda:1320799893190607009> - *Precisa de ajuda? Veja como começar!*\n" +
+                "🌐  </site:1323450197581234250> - *Acesse o site oficial do Zada!*\n" +
+                "🤖  </convite:1323434619852554261> - *Convide o Zada para seu servidor!*\n" +
+                "🐱 </git:1323428650653323447> - *Veja o repositório do Zada no GitHub!*\n \n" + 
                 "💵  </getficha:1320799893190607015> - *Obtenha suas fichas iniciais para começar a jogar.*\n" +
                 "🎲  </apostar:1320800498139398275> - *Multiplique seu valor em 2x, 4x ou 8x*\n" +
+                "⚔️  </x1:1323681061892390932> - *Enfrente outro jogador valendo 100 fichas*\n" +
                 "🔖 </info:1320799893190607016> - *Veja informações gerais sobre o cassino.*\n" +
                 "👤  </perfil:1320799893358514188> - *Confira suas informações pessoais e saldo.*\n" +
                 "📝  </registrar:1320799893190607018> - *Registre-se no cassino e comece a apostar.*\n" +
