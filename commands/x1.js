@@ -1,5 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
-const { ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');  // Adicionei as dependências necessárias
+const { ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js'); // Adicionei as dependências necessárias
 const supabase = require("../db-connect");
 
 module.exports = {
@@ -70,7 +70,7 @@ module.exports = {
             const button = new ButtonBuilder()
                 .setCustomId('accept_duel')
                 .setLabel('⚔️ Aceitar Duelo')
-                .setStyle(ButtonStyle.Primary);  // Botão de estilo primário
+                .setStyle(ButtonStyle.Primary); // Botão de estilo primário
 
             // Criação de uma linha de ação contendo o botão
             const row = new ActionRowBuilder().addComponents(button);
@@ -92,41 +92,44 @@ module.exports = {
                 if (!btnInteraction.isButton()) return;
                 if (filtro(btnInteraction)) {
 
-                    await btnInteraction.reply(`> <a:CoCFight:1323747563048013854> @${btnInteraction.user.username}, **o duelo foi aceito!**`);
-                    const players = [desafiante.id, adversario.id];
-                    const winner = players[Math.floor(Math.random() * players.length)];
+                    await btnInteraction.reply(`> <a:CoCFight:1323747563048013854> ${btnInteraction.user.username}, **o duelo foi aceito!**`);
+                    
+                    const players = [desafiante, adversario]; // Usa os objetos de usuário completos
+                    const winner = players[Math.floor(Math.random() * players.length)]; // Seleciona aleatoriamente o vencedor
 
                     // Atualiza os saldos dos jogadores
                     const { error: error3 } = await supabase
                         .from("users")
                         .update({ saldo: userProfile.saldo + 100 })
-                        .eq("userId", winner);
+                        .eq("userId", winner.id);
 
                     const { error: error4 } = await supabase
                         .from("users")
                         .update({ saldo: advProfile.saldo - 100 })
-                        .eq("userId", players.find(player => player !== winner));
+                        .eq("userId", winner.id === desafiante.id ? adversario.id : desafiante.id);
 
                     if (error3 || error4) {
                         return await interaction.followUp("Erro ao processar o duelo. Tente novamente mais tarde.");
                     }
 
+                    // Cria o embed do vencedor
                     const embedVitoria = new EmbedBuilder()
                         .setColor("#32CD32")
-                        .setTitle(`<a:Money:1323747611903000586> O vencedor foi <@${winner}>  +100 fichas para você!`)
+                        .setTitle(`<a:Money:1323747611903000586> O vencedor foi ${winner.username}! +100 fichas para você!`)
                         .setFooter({ text: "Cassino do Zada", iconURL: interaction.client.user.displayAvatarURL() });
 
-                    await interaction.followUp({ embeds: [embedVitoria] });
+                    await interaction.followUp({
+                        embeds: [embedVitoria],
+                    });
                 }
             });
 
-            // Timeout para o botão expirar após 1 minuto
             setTimeout(() => {
                 interaction.followUp({
                     content: "O duelo expirou porque o adversário não respondeu a tempo.",
                     embeds: []
                 });
-            }, 60000); 
+            }, 60000);
         } catch (error) {
             await interaction.reply("Ocorreu um erro ao processar o duelo. Tente novamente mais tarde.");
         }
