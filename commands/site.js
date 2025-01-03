@@ -18,7 +18,7 @@ module.exports = {
             new ButtonBuilder()
                 .setLabel("🌐 Acesse o Site")
                 .setStyle(ButtonStyle.Link)
-                .setURL("https://zadabot.netlify.app/")
+                .setURL("https://zadaa.netlify.app/")
         );
 
         await interaction.reply({ embeds: [embed], components: [button] });
