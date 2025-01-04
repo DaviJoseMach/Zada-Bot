@@ -11,15 +11,15 @@ module.exports = {
             .setTitle("<a:HorseLick:1320421577052917833> A cavalaria chegou <a:HorseLick:1320421577052917833>")
             .setDescription(
                 "🎲 **Está perdido?** Veja como começar logo abaixo 🧭 \n \n  **1.** O primeiro passo é se registrar com o comando \n" +
-                "🔹  </registrar:1320799893190607018> - *Entre para o Cassinão e comece sua jornada!* \n \n" +
+                "🔹     </registrar:1324745229936365599> - *Entre para o Cassinão e comece sua jornada!* \n \n" +
                 "**2.** Após isso, você poderá usar o comando \n" +
-                "💵  </getficha:1320799893190607015> - *Garanta suas fichas iniciais e prepare-se para jogar!* \n \n" +
+                "💵  </getficha:1324745229768851574> - *Garanta suas fichas iniciais e prepare-se para jogar!* \n \n" +
                 "**3.** Agora é só se divertir com a gente usando \n" +
-                "🎲  </apostar:1320800498139398275> - *Aposte 2x, 4x ou 8x de um valor escolhido e multiplique esse valor* \n" +
-                "🪙  </jogar-moeda:1320799893190607013> - *Aposte 50% do seu saldo em um emocionante cara ou coroa!* \n" +
-                "⚡  </tudo-ou-nada:1320799893358514187> - *Se ganhar, você dobra seu saldo; se perder, perde tudo!* \n" +
-                "👤  </perfil:1320799893358514188> - *Confira suas informações, como seu **Saldo** atual!* \n \n" +
-                "**Ou digite** </comandos:1320799893190607014> - *Descubra todos os comandos disponíveis e aproveite ao máximo!* 🎉"
+                "🎲  </apostar:13247452297688515705> - *Aposte 2x, 4x ou 8x de um valor escolhido e multiplique esse valor* \n" +
+                "🪙  </jogar-moeda:1324745229768851571> - *Aposte 50% do seu saldo em um emocionante cara ou coroa!* \n" +
+                "⚡  </tudo-ou-nada:1324745229936365602> - *Se ganhar, você dobra seu saldo; se perder, perde tudo!* \n" +
+                "👤  </perfil:1324745229936365603> - *Confira suas informações, como seu **Saldo** atual!* \n \n" +
+                "**Ou digite** </comandos:1324745229768851572> - *Descubra todos os comandos disponíveis e aproveite ao máximo!* 🎉"
             )
             .setImage("https://cdn.discordapp.com/attachments/1293684145897340952/1320441488567570515/HEADER.png?ex=67699c77&is=67684af7&hm=e1b87d43947d2e85b0dfc2f16475cd0685843ea1a77edf78106e55f915a9844b&")
             .setTimestamp()

@@ -40,13 +40,13 @@ module.exports = {
 
             // Rolagem dos dados
             const dadoJogador = Math.floor(Math.random() * 100) + 1; // 1-100
-            const dadoMonstro = Math.floor(Math.random() * 500) + 1; // 1-500
+            const dadoMonstro = Math.floor(Math.random() * 1200) + 1; 
 
             let resultadoMensagem = `<a:dado:1320913293203996714> Você rolou **${dadoJogador}**.\n<a:gojo:1320913250417905805> O monstro rolou **${dadoMonstro}**.\n\n`;
 
             if (dadoJogador > dadoMonstro) {
                 // Vitória do jogador
-                const premio = valorApostado * 100; // Multiplicador 100x
+                const premio = valorApostado * 100; 
                 const novoSaldo = usuario.saldo + premio;
 
                 // Atualiza o saldo no banco de dados
