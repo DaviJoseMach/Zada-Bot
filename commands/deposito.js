@@ -57,7 +57,7 @@ module.exports = {
                 return interaction.reply("Erro ao realizar o depósito.");
             }
 
-            return interaction.reply(`Você depositou ${quantia} fichas com sucesso! Seu saldo atual é ${updatedSaldo.saldo}.`);
+            return interaction.reply(`💲Você depositou **${quantia}** fichas com sucesso!`);
         }
 
         if (action === "sacar") {
@@ -70,8 +70,8 @@ module.exports = {
             const { data: updatedSaldoAfterWithdrawal, error: withdrawError } = await supabase
                 .from('users')
                 .update({
-                    saldo: userData.saldo - quantia,
-                    deposito: userData.deposito // Depósito não altera no saque
+                    saldo: userData.saldo + quantia,
+                    deposito: userData.deposito - quantia 
                 })
                 .eq('userId', user.id);
 
@@ -80,7 +80,7 @@ module.exports = {
                 return interaction.reply("Erro ao realizar o saque.");
             }
 
-            return interaction.reply(`Você sacou ${quantia} fichas com sucesso! Seu saldo atual é ${updatedSaldoAfterWithdrawal.saldo}.`);
+            return interaction.reply(`👌 Você sacou **${quantia}** fichas com sucesso! .`);
         }
     }
 };

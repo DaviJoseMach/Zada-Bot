@@ -23,6 +23,7 @@ module.exports = {
                 "👤  </perfil:1324542810476515334> - *Confira suas informações pessoais e saldo.*\n" +
                 "📝  </registrar:1324542810476515330> - *Registre-se no cassino e comece a apostar.*\n" +
                 "🪙  </jogar-moeda:1324542810279641130> - *Teste sua sorte com cara ou coroa!*\n" +
+                "📩  </depósito:1324542810279641130> - *Deposite ou saque suas fichas*\n" +
                 "⚡   </tudo-ou-nada:1324542810476515333> - *Dobre seu saldo ou perca tudo!*\n" +
                 "🏅  </rank:1324542810476515329> - *Confira o ranking dos jogadores mais ricos.*\n" +
                 "🧌  </confronto:1324542810279641132> - *Multiplique seu dinheiro em 32x derrotando um monstro!*\n" +

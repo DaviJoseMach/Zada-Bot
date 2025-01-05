@@ -13,7 +13,7 @@ module.exports = {
             // Consulta ao banco para buscar o perfil do usuário
             const { data: userProfile, error } = await supabase
                 .from("users")
-                .select("nome, saldo, dt_registro, type")
+                .select("nome, saldo, dt_registro, type, deposito")
                 .eq("userId", membro.id)
                 .single();
 
@@ -43,6 +43,7 @@ module.exports = {
                 .addFields(
                     { name: "Nome", value: userProfile.nome, inline: true },
                     { name: "Saldo", value: `${userProfile.saldo} fichas`, inline: true },
+                    { name: "Depositados", value: `${userProfile.deposito ?? 0} fichas`, inline: true },
                     { name: "Cargo", value: userProfile.type, inline: true },
                     { name: "Data de Registro", value: dtRegistro, inline: false }
                 )
